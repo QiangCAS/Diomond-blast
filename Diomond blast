@@ -1,0 +1,11 @@
+#Diomond blast to local protein database
+#set up diomond
+wget https://github.com/bbuchfink/diamond/releases/download/v0.9.18/diamond-linux64.tar.gz
+tar xvzf diamond-linux64.tar.gz
+
+#refferrnce dabase
+wget ftp://ftp.ncbi.nih.gov/blast/db/FASTA/swissprot.gz
+gzip -d swissprot.gz
+
+#create the local database
+/media/qlin/dismodo/diamond makedb --in swissprot -d swissprot
